@@ -12,7 +12,7 @@ output:
     toc_depth: 3
     code_folding: show
 editor_options:
-  chunk_output_type: inline
+  chunk_output_type: console
 ---
 
 
@@ -41,7 +41,36 @@ MAGcountsNum <- sapply(counts, as.numeric)
 
 # Plot
 
+# data
+
 ```{r}
-heatmap(MAGcountsNum)
-```
+MAGnum_df <- read.delim("input_matrix_v2.txt") %>%
+    tibble::column_to_rownames(var = "X")
+
+MAGnum_mat <- MAGnum_df %>%
+    data.matrix()
+
+heatmap(MAGnum_mat)
+
+breakers <- seq(min(MAGnum_mat, na.rm = T), 
+                max(MAGnum_mat, na.rm = T), 
+                length.out = 51)
+
+my_palette <- colorRampPalette(c("red","white ", "blue"))(n = 299)
+
+heatmap.2(MAGnum_mat, 
+        distfun = function(x) dist(x, method = "euclidean"),
+        hclustfun = function(x) hclust(x,method = "complete"),
+        scale = "row",
+        col = my_palette, 
+        #breaks = breakers, 
+        trace = "none",
+        key = TRUE, symkey = FALSE, 
+        density.info = "none", srtCol = 30,
+        margins=c(5.5,7), cexRow = 1.25,cexCol = 1.25,
+        key.xlab = "MAG Abundance",
+        #ColSideColors = colz,
+        lhei = c(1.5,9), 
+        key.title=NA
+        )
 
