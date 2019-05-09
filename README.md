@@ -1,4 +1,4 @@
-# R + Python Binder Example
+# R Binder Example
 
 This repo plots a heatmap after you mapped reads in your samples against bins or genomes you created. 
 
