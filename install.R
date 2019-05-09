@@ -1,5 +1,3 @@
-install.packages("tidyverse")
-install.packages("rmarkdown")
-install.packages("httr")
-install.packages("shinydashboard")
-install.packages('leaflet')
+pkgs = c("tidyverse", "rmarkdown", "httr", "shinydashboard", "leaflet")
+ncores = parallel::detectCores()
+install.packages(pkgs, Ncpus = ncores)
