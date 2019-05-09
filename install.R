@@ -1,1 +1,3 @@
-install.packages("magrittr","tibble","gplots")
+install.packages("magrittr")
+install.packages("tibble")
+install.packages("gplots")
