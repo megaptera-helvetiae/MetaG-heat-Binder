@@ -7,7 +7,5 @@ This repo builds on the [r binder](https://github.com/binder-examples/r) and [ju
 
 Example files included:
 
- - `python_example_for_Jupyter.ipynb` - Notebook file using a python kernel for working in Jupyter
- - `R_example_for_Jupyter.ipynb` - Notebook file using an R kernel for working in Jupyter
- - `python_example_for_RStudio.Rmd` - RMarkdown file with python code chunks for working in RStudio
- - `R_example_for_RStudio.Rmd` - RMarkdown file with R code chunkcs for working in RStudio
+ - `MetaG-heatmap-Binder.Rmd` - RMarkdown file with R code chunks to plot a heatmap in RStudio
+ - `input_matrix_v1.txt` - A sample input file where we mapped reads from several samples against MAG bins that we had created.
